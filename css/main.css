@@ -1,0 +1,73 @@
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+	width: 50px;
+	height: 50px;
+}
+.navbar-nav{
+	font-size: 1.5em;
+	color: rgba(31,220,176,1.00)
+}
+body{
+	background-image: url(../pictures/fon.png);
+}
+.dropdown-toggle{
+	color: #ff9c00;
+	font-size: 1em;
+	font-weight: 100;
+}
+.dropdown-toggle:hover{
+	color:#B1AFAF;
+}
+.dropdown-item:hover{
+	background: #B1AFAF;
+}
+.thumb img { 
+      filter: none; /* IE6-9 */ 
+      -webkit-filter: grayscale(0); 
+      border-radius:5px; 
+      background-color: #fff; 
+      border: 1px solid #ddd; 
+      padding:5px; 
+    } 
+    .thumb img:hover { 
+      filter: gray; /* IE6-9 */ 
+      -webkit-filter: grayscale(1); 
+    } 
+    .thumb { 
+      padding:5px; 
+    } 
+
+
+.media-body .author {
+  display: block;
+  font-size: 1rem;
+  color: #000;
+  font-weight: 700;
+}
+.media-body .metadata {
+  display: block;
+  color: #777;
+  font-size: .8125rem;
+}
+.media-text {
+  margin-bottom: 0.25rem;
+}
+.title-comments {
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 1.5rem;
+  color: rgba(0,0,0,.87);
+  margin-bottom: 1rem;
+  padding-bottom: .25rem;
+  border-bottom: 1px solid rgba(34,36,38,.15); 
+}
+.media-left img {
+  width: 50px;
+}
+.formbg {
+	background-color: rgba(0,0,0,0) !important;
+	border: none !important;
+}
+.mdtext{
+	font-size: 1.3em;
+}

@@ -1,0 +1,198 @@
+<!doctype html>
+<html>
+  <head>
+    <title>BOLBATYN VAN LOVE</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap-4.0.0-beta.2/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!--скрипт счетчика-->
+    <script type="text/javascript">
+  var earn_month = 0; //Начальное значение дохода в месяц
+  var delay = 100; //Задержка
+  var cur_earn = 0;
+  setInterval("startEarn()", delay);
+  function startEarn() {
+    var earn_second = earn_month / (30 * 24 * 3600);
+    cur_earn += earn_second * delay / 1000;
+    document.getElementById('earn').innerHTML = cur_earn.toFixed(5);
+  }
+  function updateEarn() {
+    earn_month = document.formearn.earn_month.value;
+    cur_earn = 0;
+  }
+</script>
+<!--скрипт часов-->
+ <script type="text/javascript">
+  function digitalWatch() {
+    var date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    if (hours < 10) hours = "0" + hours;
+    if (minutes < 10) minutes = "0" + minutes;
+    if (seconds < 10) seconds = "0" + seconds;
+    document.getElementById("digital_watch").innerHTML = hours + ":" + minutes + ":" + seconds;
+    setTimeout("digitalWatch()", 1000);
+  }
+</script>
+ <!--скрипт таймера-->
+ <script type="text/javascript">
+  function startTimer() {
+    var my_timer = document.getElementById("my_timer");
+    var time = my_timer.innerHTML;
+    var arr = time.split(":");
+    var h = arr[0];
+    var m = arr[1];
+    var s = arr[2];
+    if (s == 0) {
+      if (m == 0) {
+        if (h == 0) {
+          alert("Время вышло");
+          window.location.reload();
+          return;
+        }
+        h--;
+        m = 60;
+        if (h < 10) h = "0" + h;
+      }
+      m--;
+      if (m < 10) m = "0" + m;
+      s = 59;
+    }
+    else s--;
+    if (s < 10) s = "0" + s;
+    document.getElementById("my_timer").innerHTML = h+":"+m+":"+s;
+    setTimeout(startTimer, 1000);
+  }
+</script>
+<!--отсчет минуты-->
+<script type="text/javascript">
+function timeMsg()
+{
+var t=setTimeout("alertMsg()",3000);
+}
+function alertMsg()
+{
+alert("ОТДЫХАЙ");
+}
+</script>
+
+</head>	
+ 
+ 
+<body onload="startTimer()">
+   <div class="container-fluid p-0">  
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"><!--здесь изменять цвет полосы-->
+	<div class="col-sm-10 col-lg-3">
+	<a href="#" class="navbar-brand "><img src="pictures/head.png" class="w-100" alt="logo"></a>
+	</div>
+	<button class="navbar-toggler btn" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon"></span> 
+	</button>
+	<!--меню-->
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav ml-5">
+			<li class="nav-item p-2">
+				<a href="Main.html" class="nav-link">Главная</a>
+			</li>
+			<li class="nav-item dropdown pt-3">
+						<a href="#" class="dropdown-toggle pt-4" data-toggle="dropdown"><b class="caret m-auto">Тренер </b></a>
+					<ul class="dropdown-menu bg-dark">
+						<li><a href="abouttrener.html" class="nav-link dropdown-item">Информация о тренере</a></li>
+						<li><a href="Fotogallery.html" class="nav-link dropdown-item">Фото Тренера</a></li>
+						<li><a href="Orzivi.html" class="nav-link dropdown-item">Отзывы клиентов</a></li>
+					</ul>
+							</li>
+			<li class="nav-item p-2">
+				<a href="Metods.html" class="nav-link">Методики</a>
+			</li>
+			<li class="nav-item p-2">
+				<a href="kontakts.html" class="nav-link">Контакты</a>
+			</li>
+			<li class="nav-item p-2">
+				<a href="#" class="nav-link" data-toggle="modal" data-target="#exampleModal">Мотивация</a>
+			</li>
+			<li class="nav-item p-2">
+				<a href="Login.html" class="nav-link">Log in</a>
+			</li>
+			<li class="nav-item p-2" name="blinkbutton">
+				<a href="Sale.html" class="nav-link text-danger" >ВНИМАНИЕ АКЦИЯ </a>
+			</li>
+		</ul></div>
+	</nav>
+	  </div>
+	
+  <h1 class="text-center">Сайт для тех,кто хочет быть сильным</h1>
+   <!--слайдер-->
+    <div class="container-fluid p-0">
+    	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<ol class="carousel-indicators">
+	<li class="active" data-target="#carouselExampleIndicators" data-slide-to="0">
+	</li>
+	<li data-target="#carouselExampleIndicators" data-slide-to="2">
+	</li>
+	<li data-target="#carouselExampleIndicators" data-slide-to="3">
+	</li>
+</ol>
+   	<div class="carousel-inner">
+   		<div class="carousel-item active">
+   			<img src="pictures/1.jpg" alt="" class="d-block w-100">
+   		</div>
+   		<div class="carousel-item">
+   			<img src="pictures/2.jpg" alt="" class="d-block w-100">
+   		</div>
+   		<div class="carousel-item">
+   			<img src="pictures/3.jpg" alt="" class="d-block w-100">
+   		</div>	
+   	</div>
+   	<a href="#carouselExampleIndicators" class="carousel-control-prev" role="button" data-slide="prev">
+   		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+   		<span class="sr-only">Previous</span>
+   	</a>
+   	<a href="#carouselExampleIndicators" class="carousel-control-next" role="button" data-slide="next">
+   		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+   		<span class="sr-only">Next</span>
+   	</a>
+    	</div>
+    </div>
+    <!--форма-->
+   	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+   		<div class="modal-dialog" role="document">
+   			<div class="modal-content">
+   				<div class="modal-header">
+   					<h5 class="modal-title" id="exampleModalLabel">YOUR MUSCLES IS BEING STRONGER</h5><button class="close" type="button" data-dismiss="modal" aria-label="Close"></button>
+   					<span aria-hidden="true">&times;</span>	
+   					</div>
+   					
+   					<div class="modal-body">
+   					<form>
+<input type="button" value="Засечь минуту" onClick="timeMsg()" />
+</form>
+				<small class="form-text text-muted">Через минуту вам высветится окошко,которое просигнализиует ,что пора закончить подход</small>
+					<img class="text-center" src="pictures/Forma.jpg">
+				</div>
+   			</div>
+   		</div>
+   	</div>
+    <!--footer-->
+<footer>
+	<div class="container">
+		<hr>
+		<p class="text-left">BY EGOR LAGUTIN</p>
+		<p class="text-right">_</p>
+	</div>
+</footer>
+  
+	  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ <script src=
+"css/jquery-slim.min.js"></script>  
+<script src="css/popper.min.js"></script>
+<script src="css/bootstrap-4.0.0-beta.2/dist/js/bootstrap.js"></script>
+</body>
+
+</html>

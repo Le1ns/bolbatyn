@@ -1,0 +1,180 @@
+<!doctype html>
+<html>
+  <head>
+    <title>BOLBATYN VAN LOVE</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap-4.0.0-beta.2/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <!--скрипт счетчика-->
+    <script type="text/javascript">
+  var earn_month = 0; //Начальное значение дохода в месяц
+  var delay = 100; //Задержка
+  var cur_earn = 0;
+  setInterval("startEarn()", delay);
+  function startEarn() {
+    var earn_second = earn_month / (30 * 24 * 3600);
+    cur_earn += earn_second * delay / 1000;
+    document.getElementById('earn').innerHTML = cur_earn.toFixed(5);
+  }
+  function updateEarn() {
+    earn_month = document.formearn.earn_month.value;
+    cur_earn = 0;
+  }
+</script>
+<!--скрипт часов-->
+ <script type="text/javascript">
+  function digitalWatch() {
+    var date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    if (hours < 10) hours = "0" + hours;
+    if (minutes < 10) minutes = "0" + minutes;
+    if (seconds < 10) seconds = "0" + seconds;
+    document.getElementById("digital_watch").innerHTML = hours + ":" + minutes + ":" + seconds;
+    setTimeout("digitalWatch()", 1000);
+  }
+</script>
+ <!--скрипт таймера-->
+ <script type="text/javascript">
+  function startTimer() {
+    var my_timer = document.getElementById("my_timer");
+    var time = my_timer.innerHTML;
+    var arr = time.split(":");
+    var h = arr[0];
+    var m = arr[1];
+    var s = arr[2];
+    if (s == 0) {
+      if (m == 0) {
+        if (h == 0) {
+          alert("Время вышло");
+          window.location.reload();
+          return;
+        }
+        h--;
+        m = 60;
+        if (h < 10) h = "0" + h;
+      }
+      m--;
+      if (m < 10) m = "0" + m;
+      s = 59;
+    }
+    else s--;
+    if (s < 10) s = "0" + s;
+    document.getElementById("my_timer").innerHTML = h+":"+m+":"+s;
+    setTimeout(startTimer, 1000);
+  }
+</script>
+<!--нормальный таймер-->
+ <script type="text/javascript">
+timeend= new Date();
+timeend= new Date(timeend.getYear()>1900?(timeend.getYear()+1):(timeend.getYear()+1901),0,1);
+// для задания обратного отсчета до определенной даты укажите дату в формате:
+// timeend= new Date(ГОД, МЕСЯЦ-1, ДЕНЬ);
+// Для задания даты с точностью до времени укажите дату в формате:
+// timeend= new Date(ГОД, МЕСЯЦ-1, ДЕНЬ, ЧАСЫ-1, МИНУТЫ);
+function time() {
+    today = new Date();
+    today = Math.floor((timeend-today)/1000);
+    tsec=today%60; today=Math.floor(today/60); if(tsec<10)tsec='0'+tsec;
+    tmin=today%60; today=Math.floor(today/60); if(tmin<10)tmin='0'+tmin;
+    thour=today%24; today=Math.floor(today/24);
+    timestr=today +" дней "+ thour+" часов "+tmin+" минут "+tsec+" секунд";
+    document.getElementById('t').innerHTML=timestr;
+    window.setTimeout("time()",1000);
+}
+</script>	
+  </head>
+<body onload="time()">
+   <div class="container-fluid p-0">  
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark"><!--здесь изменять цвет полосы-->
+	<div class="col-sm-10 col-lg-3">
+	<a href="#" class="navbar- brand "><img src="pictures/head.png" class="w-100" alt="logo"></a></div>
+	<button class="navbar-toggler btn-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+	<span class="navbar-toggler-icon"></span> 
+	</button>
+	<!--меню-->
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav ml-5">
+			<li class="nav-item p-2">
+				<a href="Main.html" class="nav-link">Главная</a>
+			</li>
+			<li class="nav-item dropdown pt-3">
+						<a href="#" class="dropdown-toggle pt-4" data-toggle="dropdown"><b class="caret m-auto">Тренер </b></a>
+					<ul class="dropdown-menu bg-dark">
+						<li><a href="abouttrener.html" class="nav-link dropdown-item">Информация о тренере</a></li>
+						<li><a href="Fotogallery.html" class="nav-link dropdown-item">Фото Тренера</a></li>
+						<li><a href="Orzivi.html" class="nav-link dropdown-item">Отзывы клиентов</a></li>
+					</ul>
+							</li>
+			<li class="nav-item p-2">
+				<a href="Metods.html" class="nav-link">Методики</a>
+			</li>
+			<li class="nav-item p-2">
+				<a href="kontakts.html" class="nav-link">Контакты</a>
+			</li>
+			<li class="nav-item p-2">
+				<a href="#" class="nav-link" data-toggle="modal" data-target="#exampleModal">Мотивация</a>
+			</li>
+			<li class="nav-item p-2">
+				<a href="Login.html" class="nav-link">Log in</a>
+			</li>
+			<!--<li class="nav-item p-2">
+			 <a href="Sale.html" class="nav-link text-danger">ВНИМАНИЕ АКЦИЯ <span id="my_timer" style=" font-size:0.9em; font-weight: bold;">72:00:00</span></a>
+			</li>-->
+		</ul></div>
+	</nav>
+	  </div>
+    <div class="container mt-4">
+    <h2 class="text-center text-danger">
+    	ТОЛЬКО СЕГОДНЯ ПРОТЕИН ПО УНИКАЛЬНОЙ СКИДКЕ В 30%
+    	<p><span id="t" style="font-size:1.3em" class="text-center text-danger"></span></p>
+    </h2>
+    
+    <p class="mdtext text-danger text-center">Успейте купить натуральный протеин прямиком из америки по сниженной цене!
+    <br>ОБРАЩАТЬСЯ В ВК <a class="text-danger" href="https://vk.com/id83495558">(КЛИК СЮДА)</a></p>
+    <ul class="mdtext">
+    	<li><h4>Сывороточный протеин по цене 1000 рублей вместо 1500рублей</h4>
+    	<p>Сывороточный протеин – наиболее популярный вид протеина среди спортсменов. Он является основным компонентом во многих видах спортивного питания и различных добавках. В счет того, что он содержит лактозу и белки, его принимают даже начинающие атлеты. Неоспоримое преимущество сывороточного протеина – его цена. В сравнении с остальными видами протеина, он не стоит дорого. Принимать его можно до тренировки, чтобы пополнять энергетический заряд при выполнении упражнений, и после тренировки, чтобы возобновить затраченные ресурсы.</p></li>
+    	<li>
+    		<h4>Казеин по цене в 4000 рублей вместо 6000 рублей</h4>
+    		<p>Казеин – особый вид протеина, который отличается долгим расщеплением в организме человека – порядка восьми часов. Профессиональные тренера и диетологи советуют принимать его вечером. Таким образом, организм будет поддерживать состояние мышечного роста всю ночь, насыщая организм нужными микроэлементами. Отличительная черта казеина – антикатаболизм, то есть он препятствует разрушению мышечной ткани.
+
+Бодибилдеры принимают казеин в течение дня для того, чтобы утолить чувство голода и насытить организм белком. Высокое содержание глютамина позволяет спортсмену повысить иммунитет. Наукой доказано, что атлеты, употребляющие казеин, восстанавливаются после травм гораздо быстрее.</p></li>
+   	<li><h4>
+   		Яичный протеин по цене в 100 рублей вместо 150 рублей
+   	</h4>
+   	<p>
+Яичный протеин – вид протеина, содержащий самый высокий уровень аминокислот. Сразу же акцентируем внимание на том, что помимо аминокислот, в нем имеется максимум углеводов, поэтому для людей, желающих сбросить лишний вес, он не рекомендуется. Принимать его можно в любое время суток</p></li>
+    	
+    </ul>
+    
+    
+    
+    </div>
+    
+    
+    
+    
+	    <!--footer-->
+<footer>
+	<div class="container">
+		<hr>
+		<p class="text-left">BY EGOR LAGUTIN</p>
+		<p class="text-right">_</p>
+	</div>
+</footer>
+  
+	  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ <script src=
+"css/jquery-slim.min.js"></script>  
+<script src="css/popper.min.js"></script>
+<script src="css/bootstrap-4.0.0-beta.2/dist/js/bootstrap.js"></script>
+</body>
+
+</html>
